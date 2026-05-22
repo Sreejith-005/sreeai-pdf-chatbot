@@ -12,14 +12,22 @@ st.set_page_config(
     layout="centered"
 )
 
-st.title("📄 SreeAI PDF Chatbot")
+st.title("🤖 SreeAI PDF Chatbot")
 st.subheader("💬 Conversational RAG AI Assistant")
 
 with st.sidebar:
-    st.title("About")
+    st.title("🤖 SreeAI PDF assistant")
     st.info("""
-     - Upload a PDF and ask questions from it.
-     - This chatbot answers only from the uploaded PDF.
+    ### 📌 Features
+
+    ✅ Conversational PDF Chatbot  
+    ✅ Semantic Search  
+    ✅ Streaming AI Responses  
+    ✅ Conversational Memory  
+    ✅ RAG Architecture  
+
+    ### ⚠️ Note
+     
      - This chatbot doesn't support multiple PDFs.
      - Uploading a new PDF, removing the PDF, or clicking clear chat will reset the conversation memory.
     """)
@@ -60,6 +68,9 @@ file = st.file_uploader("**Upload PDF**",
                         type="pdf", 
                         accept_multiple_files=False,
                         key=st.session_state.uploader_key)
+
+if not file:
+    st.info("📄 Upload a PDF to start chatting.")
 
 if file is not None:
     if file.name != st.session_state.uploaded_file:
@@ -145,3 +156,7 @@ if file:
             "role":"assistant",
             "content":response
         })
+
+st.markdown("---")
+
+st.caption("**Built the RAG PDF chatbot using Streamlit, LangChain, FAISS, and Groq**")
