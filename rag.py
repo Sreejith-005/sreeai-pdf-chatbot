@@ -52,7 +52,7 @@ if "uploaded_file" not in st.session_state:
 
 if "llm" not in st.session_state:
     st.session_state.llm = ChatGroq(
-        groq_api_key="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",
+        groq_api_key=st.secrets["GROQ_API_KEY"],
         model_name="llama-3.3-70b-versatile"
     )
 
