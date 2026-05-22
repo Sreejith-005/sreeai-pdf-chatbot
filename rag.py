@@ -53,7 +53,7 @@ if "uploaded_file" not in st.session_state:
 if "llm" not in st.session_state:
     st.session_state.llm = ChatGroq(
         groq_api_key=st.secrets["GROQ_API_KEY"],
-        model_name="llama-3.3-70b-versatile"
+        model_name="llama-3.1-8b-instant"
     )
 
 file = st.file_uploader("**Upload PDF**", 
@@ -105,7 +105,7 @@ if file:
             "content":query
         })
     
-        docs = st.session_state.vectordb.max_marginal_relevance_search(query, k=8, fetch_k=20)
+        docs = st.session_state.vectordb.max_marginal_relevance_search(query, k=5, fetch_k=10)
 
         context = "\n\n".join([
             f"Page: {doc.metadata.get('page')+1}\n"
