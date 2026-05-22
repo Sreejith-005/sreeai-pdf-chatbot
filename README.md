@@ -4,7 +4,7 @@ SreeAI PDF Chatbot is a conversational AI application that allows users to uploa
 
 The chatbot uses semantic search and conversational memory to provide accurate answers from the uploaded PDF in real time.
 
-Live Demo link: https://sreeai-pdf-chatbot.streamlit.app/
+Live Demo link: https://sreeai-pdf-chatbot.streamlit.app
 
 ---
 
