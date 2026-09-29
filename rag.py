@@ -61,7 +61,7 @@ if "uploaded_file" not in st.session_state:
 if "llm" not in st.session_state:
     st.session_state.llm = ChatGroq(
         groq_api_key=st.secrets["GROQ_API_KEY"],
-        model_name="llama-3.1-8b-instant"
+        model_name="openai/gpt-oss-20b"
     )
 
 file = st.file_uploader("**Upload PDF**", 
